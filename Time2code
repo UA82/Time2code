@@ -1,37 +1,58 @@
-# Dungeon master program
+### Dungeon master program
+##
+### -------------------------
+### Import libraries
+### -------------------------
+##import random
+##
+### -------------------------
+### Subprograms
+### -------------------------
+### Function to return if a skill check is passed in DnD5e
+##def check_skill(skill, modifier, dm_value):
+##  if (modifier+skill+5)>=dm_value:
+##    return "Automatic pass"
+##  else:
+##    dice = random.randint(1,20)
+##    print("you rolled", dice)
+##    if dice == 1:
+##      return "Critical fail"
+##    elif dice == 20:
+##      return "Critical success"
+##    elif skill+dice+modifier>=dm_value:
+##      return "Check passed"
+##    else:
+##      return "Check failed"
+##  
+##
+##
+### -------------------------
+### Main program
+### -------------------------
+##
+##dm_value=int(input("Enter dm value "))
+##skill=int(input("what is your skil level "))
+##modifier=int(input("modifier value "))
+##result = check_skill(skill, modifier, dm_value)
+##print(result)
 
-# -------------------------
-# Import libraries
-# -------------------------
-import random
+### Guess the number program
+##
+### -------------------------
+### Import libraries
+### -------------------------
+##import random
+### -------------------------
+### Main program
+### -------------------------
+##guess= 0
+##number = random.randint(1,1000000)
+##while guess != number:
+##  guess = int(input("Try guess"))
+##  if guess>number:
+##   print("too high")
+##  elif guess<number:
+##    print("too low")
+##print("Well done! You have found the number! Congratulations to you! You are very good at this game! Amazing work!")
+##
 
-# -------------------------
-# Subprograms
-# -------------------------
-# Function to return if a skill check is passed in DnD5e
-def check_skill(skill, modifier, dm_value):
-  if (modifier+skill+5)>=dm_value:
-    return "Automatic pass"
-  else:
-    dice = random.randint(1,20)
-    print("you rolled", dice)
-    if dice == 1:
-      return "Critical fail"
-    elif dice == 20:
-      return "Critical success"
-    elif skill+dice+modifier>=dm_value:
-      return "Check passed"
-    else:
-      return "Check failed"
-  
-
-
-# -------------------------
-# Main program
-# -------------------------
-
-dm_value=int(input("Enter dm value "))
-skill=int(input("what is your skil level "))
-modifier=int(input("modifier value "))
-result = check_skill(skill, modifier, dm_value)
-print(result)

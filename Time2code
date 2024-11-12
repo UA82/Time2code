@@ -1,0 +1,37 @@
+# Dungeon master program
+
+# -------------------------
+# Import libraries
+# -------------------------
+import random
+
+# -------------------------
+# Subprograms
+# -------------------------
+# Function to return if a skill check is passed in DnD5e
+def check_skill(skill, modifier, dm_value):
+  if (modifier+skill+5)>=dm_value:
+    return "Automatic pass"
+  else:
+    dice = random.randint(1,20)
+    print("you rolled", dice)
+    if dice == 1:
+      return "Critical fail"
+    elif dice == 20:
+      return "Critical success"
+    elif skill+dice+modifier>=dm_value:
+      return "Check passed"
+    else:
+      return "Check failed"
+  
+
+
+# -------------------------
+# Main program
+# -------------------------
+
+dm_value=int(input("Enter dm value "))
+skill=int(input("what is your skil level "))
+modifier=int(input("modifier value "))
+result = check_skill(skill, modifier, dm_value)
+print(result)
